@@ -20,13 +20,23 @@ NUMBER  CURRENT PRICE  PERCENTAGE CHANGE  OPENING PRICE  PREVIOUS CLOSING PRICE 
 600660  47.200         0.75%              47.570         46.850                  47.900      46.520     16007-03-16 15:00:02
 ```
 
-### Options
+### CLI
 
-- `--platform=sina` set the source platform for stock data, such as `sina` or `tencent`.
-- `--index=sh` set the stock market index, such as `sh` or `sz`.
-- `--log-level=debug` set the level that is used for logging, such as `panic`, `fatal`, `error`, `warn`, `info`, `debug` or `trace`.
-- `--log-format=text` set the format that is used for logging, such as `text` or `json`.
-- `--config=config.yaml` config file (default is $HOME/.ztock/config.yaml).
+Here are the options you can give ztock:
+
+```shell
+Usage:
+  ztock [flags]
+
+Flags:
+      --config string       config file (default is $HOME/.ztock/config.yaml)
+  -h, --help                help for ztock
+  -i, --index index         set the stock market index (default sh)
+      --log-format string   set the format that is used for logging (default "text")
+      --log-level string    set the level that is used for logging (default "warn")
+  -p, --platform platform   set the source platform for stock data (default sina)
+  -v, --version             version for ztock
+```
 
 ### Configuration
 
