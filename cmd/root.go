@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/mitchellh/go-homedir"
@@ -134,8 +135,6 @@ func initLog(cfg *config.Config) {
 }
 
 func prettyPrint(s *stock.Stock) {
-	timeLayout := "2007-01-02 15:04:05"
-
 	t := table.NewWriter()
 	t.SetOutputMirror(os.Stdout)
 
@@ -149,7 +148,7 @@ func prettyPrint(s *stock.Stock) {
 	// Set table header
 	t.AppendHeader(table.Row{"Number", "Current Price", "Percentage Change", "Opening Price", "Previous Closing Price", "High Price", "Low Price", "Date"})
 	t.AppendRows([]table.Row{
-		{s.Number, s.CurrentPrice, s.PercentageChange, s.OpeningPrice, s.PreviousClosingPrice, s.HighPrice, s.LowPrice, s.Date.Format(timeLayout)},
+		{s.Number, s.CurrentPrice, s.PercentageChange, s.OpeningPrice, s.PreviousClosingPrice, s.HighPrice, s.LowPrice, s.Date.Format(time.RFC850)},
 	})
 	t.AppendSeparator()
 
