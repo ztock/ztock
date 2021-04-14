@@ -68,8 +68,7 @@ func Execute() {
 
 func init() {
 	// Init default config
-	var err error
-	cfg, err = config.New()
+	cfg, err := config.New()
 	if err != nil {
 		panic(err)
 	}
