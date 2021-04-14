@@ -84,11 +84,11 @@ const (
 )
 
 // New returns a new Config
-func New() (*Config, error) {
+func New() *Config {
 	return &Config{
 		Index:     DefaultIndex,
 		Platform:  DefaultPlatform,
 		LogLevel:  DefaultLogLevel,
 		LogFormat: DefaultLogFormat,
-	}, nil
+	}
 }

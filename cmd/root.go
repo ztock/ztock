@@ -68,10 +68,7 @@ func Execute() {
 
 func init() {
 	// Init default config
-	cfg, err := config.New()
-	if err != nil {
-		panic(err)
-	}
+	cfg := config.New()
 
 	// Initialize cobra
 	cobra.OnInitialize(initConfig)
